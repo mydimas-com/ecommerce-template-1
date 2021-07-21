@@ -114,8 +114,10 @@ class StoreController extends Controller
     {
         $id = $request->idStore;
         
-        $status = Store::where('id', $id)
-        ->delete();
+        $store = Store::find($id);
+
+        $store->admin->delete();
+        $status = $store->delete();
 
         if($status){
             return redirect()->route('admin.stores')->with('success', 'Toko berhasil dihapus!');
