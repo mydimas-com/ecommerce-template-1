@@ -17,7 +17,6 @@ class CreateAdminTable extends Migration
             $table->id();
             $table->string('email')->unique();
             $table->string('phone', 20);
-            $table->string('image');
             $table->enum('status', array('active','inactive'));
             $table->enum('role', array('0','1'));
             $table->timestamp('email_verified_at')->nullable();

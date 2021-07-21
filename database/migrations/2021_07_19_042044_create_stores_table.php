@@ -18,11 +18,11 @@ class CreateStoresTable extends Migration
             $table->unsignedBigInteger('id_admin');
             $table->string('name');
             $table->enum('category', array('branch','center'));
-            $table->unsignedBigInteger('id_province');
-            $table->unsignedBigInteger('id_city');
-            $table->integer('zipcode');
-            $table->string('address'); 
-            $table->string('phone', 20);
+            $table->unsignedBigInteger('id_province')->nullable();
+            $table->unsignedBigInteger('id_city')->nullable();
+            $table->integer('zipcode')->nullable();
+            $table->string('address')->nullable(); 
+            $table->string('phone', 20)->nullable();
             $table->timestamps();
         });
     }

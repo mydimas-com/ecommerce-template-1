@@ -121,7 +121,7 @@
             var id = $(this).attr('data-storeId');
             var title = $(this).attr('data-storeTitle');
             $('#idStore').val(id);
-            $('#delMsg').html("Apakah kamu yakin ingin menghapus toko" + title.bold() +
+            $('#delMsg').html("Apakah kamu yakin ingin menghapus toko " + title.bold() +
                 "?");
         });
 

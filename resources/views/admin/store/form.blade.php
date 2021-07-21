@@ -160,7 +160,7 @@
 
         <div class="clearfix">
             <button type="submit" class="btn btn-success col-lg-2 col-sm-12 float-right">
-                Tambah
+                {{$btn}}
             </button>
         </div>
         
@@ -171,8 +171,10 @@
 @endsection
 
 @push('stylesheets')
+
     <link rel="stylesheet" href="{{asset('admin/lib/select2/select2.min.css') }}">
     <link rel="stylesheet" href="{{asset('admin/lib/select2/select2-bootstrap4.min.css') }}">
+    
 @endpush
 
 @push('js')
