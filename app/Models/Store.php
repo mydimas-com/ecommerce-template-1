@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Products;
 use App\Models\ProductInventory;
 use App\Models\Province;
 use App\Models\City;
@@ -14,7 +15,7 @@ class Store extends Model
 {
     use HasFactory;
 
-    protected $table = 'store';
+    protected $table = 'stores';
     
     protected $fillable = [
         'id_admin',
@@ -26,6 +27,9 @@ class Store extends Model
         'address',
         'phone',
     ];
+    public function product(){
+        return $this->hasMany(Products::class, 'id_store', 'id');
+    }
     public function product_inventory(){
         return $this->hasMany(ProductInventory::class, 'id_store', 'id');
     }
