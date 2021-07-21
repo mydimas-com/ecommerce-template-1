@@ -65,6 +65,7 @@ class Kernel extends HttpKernel
 
         //custom
         'role' => \App\Http\Middleware\CekRole::class,
+        'address' => \App\Http\Middleware\CheckAddress::class,
         'websiteStatus' => \App\Http\Middleware\CheckStatusWebsite::class,
     ];
 }
