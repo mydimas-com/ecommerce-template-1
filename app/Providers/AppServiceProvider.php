@@ -4,6 +4,10 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Pagination\Paginator;
+use Carbon\Carbon;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -23,6 +27,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // location & timezone
+        config(['app.locale' => 'id']);
+        Carbon::setLocale('id');
+        date_default_timezone_set('Asia/Jakarta');
+
+        //rp format
+        Blade::directive('currency', function ($expression) {
+            return "Rp. <?php echo number_format($expression, 0, ',', '.'); ?>";
+        });
+
+        //bootstrap pagination
+        Paginator::useBootstrap();
     }
 }
