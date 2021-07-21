@@ -10,6 +10,7 @@ class BannerPromoStoreRequest extends FormRequest
     {
         return true;
     }
+    
     public function rules()
     {
         return [
@@ -28,8 +29,6 @@ class BannerPromoStoreRequest extends FormRequest
             'image.max' => 'Ukuran gambar produk maksimal 2mb!',
             'url.max' => 'Url maksimal 255 karakter!',
             'status.in' => 'Pilihan status hanya aktif atau tidak aktif!'
-
-            
         ];
     }
 }
